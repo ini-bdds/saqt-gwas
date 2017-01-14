@@ -1,0 +1,6 @@
+## Ignore Mac OS Stuff
+.DS_Store
+
+## Ignore Other Stuff
+.Rapp.history
+.ipynb_checkpoints/saqt_gwas_template-checkpoint.ipynb

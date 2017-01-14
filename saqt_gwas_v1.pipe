@@ -1,0 +1,1266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="FileStructureSetup_1.Output" sink="bfileTransformer_1.Directory" />
+                <connection source="List-String_2.out" sink="Trasformer.phe_1.Measure" />
+                <connection source="FileStructureSetup_1.Output" sink="Trasformer.phe_1.Directory" />
+                <connection source="bfileTransformer_1.Output" sink="PLINKLinear_1.bfile" />
+                <connection source="Trasformer.phe_1.Output" sink="PLINKLinear_1.Phenotype" />
+                <connection source="MinorAlleleFrequency_1.Output" sink="PLINKLinear_1.MinorAlleleFrequency" />
+                <connection source="MissingRateperSNP_1.Output" sink="PLINKLinear_1.MissingRateperSNP" />
+                <connection source="H-WEqTest_1.Output" sink="PLINKLinear_1.H-WEqTest" />
+                <connection source="MissingRateperPerson_1.Output" sink="PLINKLinear_1.MissingRateperPerson" />
+                <connection source="noweb_1.Output" sink="PLINKLinear_1.Noweb" />
+                <connection source="AddFIDto.phe_1.FlowControlOutput" sink="PLINKLinear_1.FlowControl" />
+                <connection source="CreateCovariateFile_1.FlowControl" sink="PLINKLinear_1.FlowControl" />
+                <connection source="PLINKMerge_1.FlowControl" sink="PLINKLinear_1.FlowControl" />
+                <connection source="Transformerassoc_1.Output" sink="PLINKLinear_1.Output" />
+                <connection source="CovariateTransformer_1.Output" sink="PLINKLinear_1.Covariate" />
+                <connection source="PfilterEcho_1.PfilterOutput" sink="PLINKLinear_1.Pfilter" />
+                <connection source="ExclusionEcho_1.ExclusionListOutput" sink="PLINKLinear_1.Exclusion" />
+                <connection source="Pfilter_1.Output" sink="PfilterEcho_1.Pfilter" />
+                <connection source="StatsFile_1.Output" sink="StatsEcho_1.StatsFile" />
+                <connection source="ServerSaveDirectory_1.Output" sink="SavetoServerFolder_1.Savedirectory" />
+                <connection source="AddAnnotationsLogistic_1.FlowControlOutput" sink="SavetoServerFolder_1.FlowControlInput" />
+                <connection source="AddAnnotationsLinear_1.FlowControlOutput" sink="SavetoServerFolder_1.FlowControlInput" />
+                <connection source="PLINKAssoc_1.FlowControlOutput" sink="SavetoServerFolder_1.FlowControlInput" />
+                <connection source="FileStructureSetup_1.Output" sink="SavetoServerFolder_1.Directory" />
+                <connection source="ResultsName_1.Output" sink="SavetoServerFolder_1.ResultsName" />
+                <connection source="SubjectstoExclude_1.Output" sink="ExclusionEcho_1.ExclusionLIst" />
+                <connection source="FileStructureSetup_1.FlowControlOutput" sink="AddAltPhe_1.FlowControlInput" />
+                <connection source="FileIO2_1.AnnotationFileout" sink="AddAltPhe_1.Merged" />
+                <connection source="FileStructureSetup_1.Output" sink="AddAltPhe_1.OutputDirectory" />
+                <connection source="PLINKLogistic_1.FlowControlOutput" sink="TabPLINKLogistic_1.FlowControlInput" />
+                <connection source="FileStructureSetup_1.Output" sink="TabPLINKLogistic_1.Directory" />
+                <connection source="FileStructureSetup_1.FlowControlOutput" sink="Make.pheFile_1.FlowControlInput" />
+                <connection source="List-MultiwordString_1.out" sink="Make.pheFile_1.Measurementname" />
+                <connection source="StatsEcho_1.StatsFileOutput" sink="Make.pheFile_1.Statslocation" />
+                <connection source="FileStructureSetup_1.Output" sink="Make.pheFile_1.OutputDirectory" />
+                <connection source="FileStructureSetup_1.Output" sink="AddAnnotationsLogistic_1.PLINKResults" />
+                <connection source="FileIO1_1.AnnotationFileout" sink="AddAnnotationsLogistic_1.SNPAnnotation" />
+                <connection source="TabPLINKLogistic_1.FlowControlOutput" sink="AddAnnotationsLogistic_1.FlowControlInput" />
+                <connection source="Measures_1.Output" sink="File-List_1.Measures" />
+                <connection source="File-List_2.out" sink="List-String_1.in" />
+                <connection source="FileStructureSetup_1.Output" sink="TabPLINKLinear_1.Directory" />
+                <connection source="PLINKLinear_1.FlowControlOutput" sink="TabPLINKLinear_1.FlowControlInput" />
+                <connection source="List-String_2.out" sink="TabPLINKLinear_1.Measure" />
+                <connection source="File-List_1.out" sink="List-String_2.in" />
+                <connection source="bfileTransformer_1.Output" sink="PLINKLogistic_1.bfile" />
+                <connection source="MinorAlleleFrequency_1.Output" sink="PLINKLogistic_1.MinorAlleleFrequency" />
+                <connection source="MissingRateperSNP_1.Output" sink="PLINKLogistic_1.MissingRateperSNP" />
+                <connection source="H-WEqTest_1.Output" sink="PLINKLogistic_1.H-WEqTest" />
+                <connection source="MissingRateperPerson_1.Output" sink="PLINKLogistic_1.MissingRateperPerson" />
+                <connection source="noweb_1.Output" sink="PLINKLogistic_1.Noweb" />
+                <connection source="PLINKMerge_1.FlowControl" sink="PLINKLogistic_1.FlowControl" />
+                <connection source="Transf.Logistic_1.Output" sink="PLINKLogistic_1.Output" />
+                <connection source="CovariateTransformer_1.Output" sink="PLINKLogistic_1.Covariate" />
+                <connection source="PfilterEcho_1.PfilterOutput" sink="PLINKLogistic_1.Pfilter" />
+                <connection source="ExclusionEcho_1.ExclusionListOutput" sink="PLINKLogistic_1.Exclusion" />
+                <connection source="FileIO2_1.AnnotationFileout" sink="NormalizebyICV_1.final_merged" />
+                <connection source="FileStructureSetup_1.Output" sink="NormalizebyICV_1.output" />
+                <connection source="Make.pheFile_1.FlowControlOutput" sink="NormalizebyICV_1.FlowControlInput" />
+                <connection source="List-String_1.out" sink="NormalizebyICV_1.Measures" />
+                <connection source="StatsEcho_1.StatsFileOutput" sink="NormalizebyICV_1.stats_file_with_ICV" />
+                <connection source="ExternalICV_1.Output" sink="NormalizebyICV_1.UseexternalICV" />
+                <connection source="ICVColumnName_1.Output" sink="NormalizebyICV_1.ICVColumnName" />
+                <connection source="Pedfile_1.Output" sink="PLINKMerge_1.pedfile" />
+                <connection source="Transf.PLINKMerge_1.Output" sink="PLINKMerge_1.Output" />
+                <connection source="Mapfile_1.Output" sink="PLINKMerge_1.mapfile" />
+                <connection source="bfile_1.Output" sink="PLINKMerge_1.ADNIbfile" />
+                <connection source="MergeMode_1.Output" sink="PLINKMerge_1.MergeMode" />
+                <connection source="AddAltPhe_1.FlowControlOutput" sink="PLINKMerge_1.FlowControlInput" />
+                <connection source="AltPheTransformer_1.Output" sink="PLINKMerge_1.Pheno" />
+                <connection source="FileStructureSetup_1.Output" sink="CovariateTransformer_1.Directory" />
+                <connection source="FileStructureSetup_1.Output" sink="AddAnnotationsLinear_1.PLINKResults" />
+                <connection source="FileIO1_1.AnnotationFileout" sink="AddAnnotationsLinear_1.SNPAnnotation" />
+                <connection source="List-String_2.out" sink="AddAnnotationsLinear_1.Measures" />
+                <connection source="TabPLINKLinear_1.FlowControlOutput" sink="AddAnnotationsLinear_1.FlowControlInput" />
+                <connection source="List-String_2.out" sink="Transformerassoc_1.Measure" />
+                <connection source="FileStructureSetup_1.Output" sink="Transformerassoc_1.Directory" />
+                <connection source="FileStructureSetup_1.Output" sink="AltPheTransformer_1.Directory" />
+                <connection source="TempDirectory_1.Output" sink="FileStructureSetup_1.DirectoryName" />
+                <connection source="ResultsName_1.Output" sink="FileStructureSetup_1.ResultsFolderName" />
+                <connection source="FileIO2_1.AnnotationFileout" sink="AddFIDto.phe_1.Merged" />
+                <connection source="FileStructureSetup_1.Output" sink="AddFIDto.phe_1.Output" />
+                <connection source="NormalizebyICV_1.FlowControlOutput" sink="AddFIDto.phe_1.FlowControlInput" />
+                <connection source="List-String_2.out" sink="AddFIDto.phe_1.Measures" />
+                <connection source="MergedData_1.Output" sink="FileIO2_1.AnnotationFile" />
+                <connection source="FileIO2_1.AnnotationFileout" sink="CreateCovariateFile_1.ADNIData" />
+                <connection source="Covariates_1.Output" sink="CreateCovariateFile_1.Covariates" />
+                <connection source="FileStructureSetup_1.Output" sink="CreateCovariateFile_1.Output" />
+                <connection source="FileStructureSetup_1.FlowControlOutput" sink="CreateCovariateFile_1.FlowControlInput" />
+                <connection source="ToNormalize_1.Output" sink="File-List_2.ToNormalize" />
+                <connection source="AnnotationFile_1.Output" sink="FileIO1_1.AnnotationFile" />
+                <connection source="FileStructureSetup_1.Output" sink="Transf.Logistic_1.Directory" />
+                <connection source="bfileTransformer_1.Output" sink="PLINKAssoc_1.bfile" />
+                <connection source="MinorAlleleFrequency_1.Output" sink="PLINKAssoc_1.MinorAlleleFrequency" />
+                <connection source="MissingRateperSNP_1.Output" sink="PLINKAssoc_1.MissingRateperSNP" />
+                <connection source="H-WEqTest_1.Output" sink="PLINKAssoc_1.H-WEqTest" />
+                <connection source="MissingRateperPerson_1.Output" sink="PLINKAssoc_1.MissingRateperPerson" />
+                <connection source="noweb_1.Output" sink="PLINKAssoc_1.Noweb" />
+                <connection source="PLINKMerge_1.FlowControl" sink="PLINKAssoc_1.FlowControl" />
+                <connection source="AddFIDto.phe_1.FlowControlOutput" sink="PLINKAssoc_1.FlowControl" />
+                <connection source="List-String_2.Newparameter1" sink="PLINKAssoc_1.FlowControl" />
+                <connection source="Transformerassocmeans_1.Output" sink="PLINKAssoc_1.Output" />
+                <connection source="PfilterEcho_1.PfilterOutput" sink="PLINKAssoc_1.Pfilter" />
+                <connection source="ExclusionEcho_1.ExclusionListOutput" sink="PLINKAssoc_1.Exclusion" />
+                <connection source="Trasformer.phemeans_1.Output" sink="PLINKAssoc_1.Phenotype" />
+                <connection source="List-String_2.out" sink="Transformerassocmeans_1.Measure" />
+                <connection source="FileStructureSetup_1.Output" sink="Transformerassocmeans_1.Directory" />
+                <connection source="List-String_2.out" sink="Trasformer.phemeans_1.Measure" />
+                <connection source="FileStructureSetup_1.Output" sink="Trasformer.phemeans_1.Directory" />
+                <connection source="File-List_1.out" sink="List-MultiwordString_1.in" />
+                <connection source="FileStructureSetup_1.Output" sink="Transf.PLINKMerge_1.Directory" />
+        </connections>
+        <icons>
+                <icon id="0" value="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" />
+        </icons>
+        <moduleGroup id="StatstoAssociation_1" name="Stats to Association" posX="0" posY="0" sourceCode="">
+                <metadata>
+                        <data key="__creationDateKey" value="Mon Sep 26 14:42:04 MST 2016" />
+                </metadata>
+                <input link="FileStructureSetup_1.DirectoryName" id="StatstoAssociation_1.DirectoryName" name="Directory Name" order="0" />
+                <input link="FileStructureSetup_1.ResultsFolderName" id="StatstoAssociation_1.ResultsFolderName" name="Results Folder Name" order="1" />
+                <input link="FileIO2_1.AnnotationFile" id="StatstoAssociation_1.AnnotationFile" name="Annotation File" order="2" />
+                <input link="StatsEcho_1.StatsFile" id="StatstoAssociation_1.StatsFile" name="Stats File" order="3" />
+                <input link="NormalizebyICV_1.UseexternalICV" id="StatstoAssociation_1.UseexternalICV" name="Use external ICV?" order="4" />
+                <input link="NormalizebyICV_1.ICVColumnName" id="StatstoAssociation_1.ICVColumnName" name="ICV Column Name" order="5" />
+                <input link="File-List_1.Measures" id="StatstoAssociation_1.Measures" name="Measures" order="6" />
+                <input link="File-List_2.ToNormalize" id="StatstoAssociation_1.ToNormalize" name="To Normalize" order="7" />
+                <input link="ExclusionEcho_1.ExclusionLIst" id="StatstoAssociation_1.ExclusionLIst" name="Exclusion LIst" order="8" />
+                <input link="CreateCovariateFile_1.Covariates" id="StatstoAssociation_1.Covariates" name="Covariates" order="9" />
+                <input link="PfilterEcho_1.Pfilter" id="StatstoAssociation_1.Pfilter" name="Pfilter" order="10" />
+                <input link="PLINKMerge_1.ADNIbfile" id="StatstoAssociation_1.ADNIbfile" name="ADNI bfile" order="11" />
+                <input link="PLINKMerge_1.pedfile" id="StatstoAssociation_1.pedfile" name="ped file" order="12" />
+                <input link="PLINKMerge_1.mapfile" id="StatstoAssociation_1.mapfile" name="map file" order="13" />
+                <input link="FileIO1_1.AnnotationFile" id="StatstoAssociation_1.AnnotationFile_2" name="Annotation File" order="14" />
+                <input link="SavetoServerFolder_1.Savedirectory" id="StatstoAssociation_1.Savedirectory" name="Save directory" order="15" />
+                <transformerModule id="bfileTransformer_1" name="bfile Transformer" posX="153" posY="683" sourceCode="">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 16:06:18 MST 2016" />
+                        </metadata>
+                        <output id="bfileTransformer_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <input id="bfileTransformer_1.Directory" name="Directory" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <transformations>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Directory" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value="/merged_plink_data/merged_plink_data" />
+                                </transformation>
+                        </transformations>
+                </transformerModule>
+                <dataModule id="bfile_1" name="bfile" posX="27" posY="886" rotation="1" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 23 16:45:49 MST 2016" />
+                        </metadata>
+                        <output id="bfile_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>/path/to/bfile_basename</value>
+                        </values>
+                </dataModule>
+                <transformerModule id="Trasformer.phe_1" name="Trasformer .phe" posX="865" posY="710" sourceCode="">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 30 12:57:38 MST 2016" />
+                        </metadata>
+                        <output id="Trasformer.phe_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <input id="Trasformer.phe_1.Measure" name="Measure" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="Trasformer.phe_1.Directory" name="Directory" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <transformations>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Directory" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value="/phe_files_with_FID/" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Measure" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value=".phe" />
+                                </transformation>
+                        </transformations>
+                </transformerModule>
+                <module id="PLINKLinear_1" name="PLINK Linear" package="PLINK" version="1.07" icon="0" posX="534" posY="1189" sourceCode="" location="pipeline://cranium.loni.usc.edu//usr/local/loniWorkflows/Bioinformatics/plink/plink" gridVariables="h_vmem=6;h_stack=256">
+                        <citations>
+                                <citation>PMID: 17701901</citation>
+                        </citations>
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 17 13:56:17 PDT 2010" />
+                        </metadata>
+                        <input id="PLINKLinear_1.bfile" name="bfile" required="true" enabled="true" order="1" prefix="--bfile" prefixSpaced="true" prefixAllArgs="false" includeTransformedParameter="true">
+                                <format type="String" cardinality="1">
+                                        <transform order="0" operation="Replace">PLINKAssoc_1.bfile-1:PLINKMerge_1.Output-1</transform>
+                                </format>
+                        </input>
+                        <input id="PLINKLinear_1.Association" name="Association" required="true" enabled="true" order="2" prefix="--linear" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="PLINKLinear_1.Phenotype" name="Phenotype" required="true" enabled="true" order="7" prefix="--pheno" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="PLINKLinear_1.MinorAlleleFrequency" name="Minor Allele Frequency" required="true" enabled="true" order="11" prefix="--maf" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKLinear_1.MissingRateperSNP" name="Missing Rate per SNP" required="true" enabled="true" order="10" prefix="--geno" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKLinear_1.H-WEqTest" name="H-W Eq Test" required="true" enabled="true" order="12" prefix="--hwe" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKLinear_1.MissingRateperPerson" name="Missing Rate per Person" required="true" enabled="true" order="9" prefix="--mind" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKLinear_1.Noweb" name="No web" required="false" enabled="true" order="13">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="PLINKLinear_1.FlowControl" name="Flow Control" required="true" enabled="true" order="0">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <input id="PLINKLinear_1.Output" name="Output" required="true" enabled="true" order="6" prefix="--out" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="PLINKLinear_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="14">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="PLINKLinear_1.Covariate" name="Covariate" required="true" enabled="true" order="3" prefix="--covar" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="PLINKLinear_1.HideCovar" name="Hide Covar" required="false" enabled="true" order="4" prefix="--hide-covar" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="PLINKLinear_1.Pfilter" name="Pfilter" required="false" enabled="true" order="8" prefix="--pfilter" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKLinear_1.Exclusion" name="Exclusion" required="true" enabled="true" order="5" prefix="--remove" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <license>GNU General Public License</license>
+                </module>
+                <dataModule id="ResultsName_1" name="Results Name" posX="275" posY="48" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 13:00:38 MST 2016" />
+                        </metadata>
+                        <output id="ResultsName_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>results_name</value>
+                        </values>
+                </dataModule>
+                <module id="PfilterEcho_1" name="Pfilter Echo" posX="959" posY="761" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/echo">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 26 12:27:52 MST 2016" />
+                        </metadata>
+                        <input id="PfilterEcho_1.Pfilter" name="Pfilter" required="true" enabled="true" order="0">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <output id="PfilterEcho_1.PfilterOutput" name="Pfilter Output" required="true" enabled="true" order="1">
+                                <format type="Number" cardinality="1" />
+                                <stringExtract source="stdout" rule="locationBased" delimiter=" " row="11" col="-1" />
+                        </output>
+                </module>
+                <dataModule id="MinorAlleleFrequency_1" name="Minor Allele Frequency" posX="1332" posY="766" sourceCode="" type="Number" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 23 17:28:16 MST 2016" />
+                        </metadata>
+                        <output id="MinorAlleleFrequency_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>0.05</value>
+                        </values>
+                </dataModule>
+                <module id="StatsEcho_1" name="Stats Echo" posX="630" posY="224" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/echo">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 26 12:27:52 MST 2016" />
+                        </metadata>
+                        <input id="StatsEcho_1.StatsFile" name="Stats File" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="StatsEcho_1.StatsFileOutput" name="Stats File Output" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                                <stringExtract source="stdout" rule="locationBased" delimiter=" " row="11" col="-1" />
+                        </output>
+                </module>
+                <module id="SavetoServerFolder_1" name="Save to Server Folder" description="Also should delete the temporary saved files" posX="256" posY="1730" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/save_to_server_directory.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 17:36:01 MST 2016" />
+                        </metadata>
+                        <input id="SavetoServerFolder_1.Savedirectory" name="Save directory" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="SavetoServerFolder_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <input id="SavetoServerFolder_1.Directory" name="Directory" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="SavetoServerFolder_1.ResultsName" name="Results Name" required="true" enabled="true" order="2">
+                                <format type="String" cardinality="1" />
+                        </input>
+                </module>
+                <module id="ExclusionEcho_1" name="Exclusion Echo" posX="1212" posY="554" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/echo">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 26 12:27:52 MST 2016" />
+                        </metadata>
+                        <input id="ExclusionEcho_1.ExclusionLIst" name="Exclusion LIst" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="ExclusionEcho_1.ExclusionListOutput" name="Exclusion List Output" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                                <stringExtract source="stdout" rule="locationBased" delimiter=" " row="11" col="-1" />
+                        </output>
+                </module>
+                <module id="AddAltPhe_1" name="Add Alt Phe" posX="358" posY="273" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/create_cc_phe_file.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Aug 08 12:22:33 MST 2016" />
+                        </metadata>
+                        <input id="AddAltPhe_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="0">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <input id="AddAltPhe_1.Merged" name="Merged" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="AddAltPhe_1.OutputDirectory" name="Output Directory" required="true" enabled="true" order="2">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="AddAltPhe_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                </module>
+                <dataModule id="ICVColumnName_1" name="ICV Column Name" posX="857" posY="48" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 12:58:38 MST 2016" />
+                        </metadata>
+                        <output id="ICVColumnName_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>nonorm</value>
+                        </values>
+                </dataModule>
+                <dataModule id="H-WEqTest_1" name="H-W Eq Test" posX="1366" posY="817" sourceCode="" type="Number" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 23 17:40:01 MST 2016" />
+                        </metadata>
+                        <output id="H-WEqTest_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>0.000001</value>
+                        </values>
+                </dataModule>
+                <dataModule id="TempDirectory_1" name="Temp Directory" posX="216" posY="16" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jul 18 10:34:47 PDT 2008" />
+                        </metadata>
+                        <output id="TempDirectory_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>{$tempdir}/{$username}</value>
+                        </values>
+                </dataModule>
+                <dataModule id="Pedfile_1" name="Ped file" package="LONI" version="1.0" description="Basename of the .tped and .tfam files.&#xA;&#xA;E.g., &#xA;/usr/local/loniWorkflows/Bioinformatics/data/early1.*" posX="26" posY="992" rotation="1" sourceCode="" type="File" source="true" loopIndex="false" serverAddress="cranium.loni.usc.edu">
+                        <tag />
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 17 14:36:19 PDT 2010" />
+                        </metadata>
+                        <output id="Pedfile_1.Output" name="Output" description="Basename of the .tped and .tfam files.&#xA;&#xA;E.g., &#xA;/usr/local/loniWorkflows/Bioinformatics/data/early1.*" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//path/to/external_genetics_data.ped</value>
+                        </values>
+                </dataModule>
+                <dataModule id="StatsFile_1" name="Stats File" posX="667" posY="15" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Sep 22 17:33:17 MST 2016" />
+                        </metadata>
+                        <output id="StatsFile_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>/path/to/stats.txt</value>
+                        </values>
+                </dataModule>
+                <module id="TabPLINKLogistic_1" name="Tab PLINK Logistic" posX="601" posY="1519" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/plink_logistic_tab_dl.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 18:10:07 MST 2016" />
+                        </metadata>
+                        <input id="TabPLINKLogistic_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="1">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <output id="TabPLINKLogistic_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="TabPLINKLogistic_1.Directory" name="Directory" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                </module>
+                <dataModule id="Covariates_1" name="Covariates" posX="28" posY="18" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 05 19:19:35 MST 2016" />
+                        </metadata>
+                        <output id="Covariates_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>COVAR_1 COVAR_2 COVAR_3</value>
+                        </values>
+                </dataModule>
+                <module id="Make.pheFile_1" name="Make .phe File" posX="318" posY="447" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/create_phe_file.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Aug 08 12:22:33 MST 2016" />
+                        </metadata>
+                        <input id="Make.pheFile_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="0">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <input id="Make.pheFile_1.Measurementname" name="Measurement name" required="true" enabled="true" order="2">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="Make.pheFile_1.Statslocation" name="Stats location" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="Make.pheFile_1.OutputDirectory" name="Output Directory" required="true" enabled="true" order="3">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="Make.pheFile_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="4">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                </module>
+                <module id="AddAnnotationsLogistic_1" name="Add Annotations Logistic" posX="365" posY="1569" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/annotate_logistic_assoc.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 11:40:08 MST 2016" />
+                        </metadata>
+                        <input id="AddAnnotationsLogistic_1.PLINKResults" name="PLINK Results" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="AddAnnotationsLogistic_1.SNPAnnotation" name="SNP Annotation" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="AddAnnotationsLogistic_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <output id="AddAnnotationsLogistic_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                </module>
+                <dataModule id="noweb_1" name="noweb" description="--noweb" posX="1407" posY="856" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink/summary.shtml</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Nov 15 18:40:02 PST 2010" />
+                        </metadata>
+                        <output id="noweb_1.Output" name="Output" description="--noweb" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>--noweb</value>
+                        </values>
+                </dataModule>
+                <module id="File-List_1" name="File -&gt; List" posX="1074" posY="115" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/cp">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 11:41:32 PDT 2016" />
+                        </metadata>
+                        <input id="File-List_1.Measures" name="Measures" required="false" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="File-List_1.out" name="out" required="false" enabled="true" isListFile="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                </module>
+                <module id="List-String_1" name="List -&gt; String" posX="1292" posY="261" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/echo">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 11:41:32 PDT 2016" />
+                        </metadata>
+                        <input id="List-String_1.in" name="in" required="false" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="List-String_1.out" name="out" required="false" enabled="true" isListFile="true" order="1">
+                                <format type="String" cardinality="1" />
+                                <stringExtract source="stdout" rule="locationBased" delimiter=" " row="11" col="-1" />
+                        </output>
+                </module>
+                <module id="TabPLINKLinear_1" name="Tab PLINK Linear" posX="978" posY="1416" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/plink_linear_tab_dl.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 18:10:07 MST 2016" />
+                        </metadata>
+                        <input id="TabPLINKLinear_1.Directory" name="Directory" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="TabPLINKLinear_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <output id="TabPLINKLinear_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="TabPLINKLinear_1.Measure" name="Measure" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                </module>
+                <module id="List-String_2" name="List -&gt; String" posX="1143" posY="356" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/echo">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 11:41:32 PDT 2016" />
+                        </metadata>
+                        <input id="List-String_2.in" name="in" required="false" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="List-String_2.out" name="out" required="false" enabled="true" isListFile="true" order="1">
+                                <format type="String" cardinality="1" />
+                                <stringExtract source="stdout" rule="locationBased" delimiter=" " row="11" col="-1" />
+                        </output>
+                        <output id="List-String_2.Newparameter1" name="New parameter 1" required="false" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                </module>
+                <module id="PLINKLogistic_1" name="PLINK Logistic" package="PLINK" version="1.07" icon="0" posX="498" posY="1393" sourceCode="" location="pipeline://cranium.loni.usc.edu//usr/local/loniWorkflows/Bioinformatics/plink/plink" gridVariables="h_vmem=6;h_stack=256">
+                        <citations>
+                                <citation>PMID: 17701901</citation>
+                        </citations>
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 17 13:56:17 PDT 2010" />
+                        </metadata>
+                        <input id="PLINKLogistic_1.bfile" name="bfile" required="true" enabled="true" order="1" prefix="--bfile" prefixSpaced="true" prefixAllArgs="false" includeTransformedParameter="true">
+                                <format type="String" cardinality="1">
+                                        <transform order="0" operation="Replace">PLINKAssoc_1.bfile-1:PLINKMerge_1.Output-1</transform>
+                                </format>
+                        </input>
+                        <input id="PLINKLogistic_1.Association" name="Association" required="true" enabled="true" order="2" prefix="--logistic" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="PLINKLogistic_1.MinorAlleleFrequency" name="Minor Allele Frequency" required="true" enabled="true" order="10" prefix="--maf" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKLogistic_1.MissingRateperSNP" name="Missing Rate per SNP" required="true" enabled="true" order="9" prefix="--geno" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKLogistic_1.H-WEqTest" name="H-W Eq Test" required="true" enabled="true" order="11" prefix="--hwe" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKLogistic_1.MissingRateperPerson" name="Missing Rate per Person" required="true" enabled="true" order="8" prefix="--mind" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKLogistic_1.Noweb" name="No web" required="false" enabled="true" order="12">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="PLINKLogistic_1.FlowControl" name="Flow Control" required="true" enabled="true" order="0">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <input id="PLINKLogistic_1.Output" name="Output" required="true" enabled="true" order="6" prefix="--out" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="PLINKLogistic_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="13">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="PLINKLogistic_1.Covariate" name="Covariate" required="true" enabled="true" order="3" prefix="--covar" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="PLINKLogistic_1.HideCovar" name="Hide Covar" required="false" enabled="true" order="4" prefix="--hide-covar" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="PLINKLogistic_1.Pfilter" name="Pfilter" required="false" enabled="true" order="7" prefix="--pfilter" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKLogistic_1.Exclusion" name="Exclusion" required="true" enabled="true" order="5" prefix="--remove" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <license>GNU General Public License</license>
+                </module>
+                <module id="NormalizebyICV_1" name="Normalize by ICV" posX="615" posY="572" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/normalize.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Aug 29 12:56:16 MST 2016" />
+                        </metadata>
+                        <input id="NormalizebyICV_1.final_merged" name="final_merged" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="NormalizebyICV_1.output" name="output" required="true" enabled="true" order="5">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NormalizebyICV_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="0">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <output id="NormalizebyICV_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="7">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="NormalizebyICV_1.Measures" name="Measures" required="true" enabled="true" order="6">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NormalizebyICV_1.stats_file_with_ICV" name="stats_file_with_ICV" required="true" enabled="true" order="2">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NormalizebyICV_1.UseexternalICV" name="Use external ICV?" required="true" enabled="true" order="3">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NormalizebyICV_1.ICVColumnName" name="ICV Column Name" required="false" enabled="true" order="4">
+                                <format type="String" cardinality="1" />
+                        </input>
+                </module>
+                <module id="PLINKMerge_1" name="PLINK Merge" package="PLINK" version="1.07" icon="0" posX="368" posY="1015" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu//usr/local/loniWorkflows/Bioinformatics/plink/plink" gridVariables="h_vmem=6;h_stack=256">
+                        <citations>
+                                <citation>PMID: 17701901</citation>
+                        </citations>
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 17 13:56:17 PDT 2010" />
+                        </metadata>
+                        <input id="PLINKMerge_1.pedfile" name="ped file" required="true" enabled="true" order="1" prefix="--merge" prefixSpaced="true" prefixAllArgs="false" includeTransformedParameter="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Subtract">.tfam</transform>
+                                </format>
+                        </input>
+                        <input id="PLINKMerge_1.MakeBedArgu" name="Make Bed Argu" required="true" enabled="true" order="4" prefix="--make-bed" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="PLINKMerge_1.Output" name="Output" required="true" enabled="true" order="5" prefix="--out" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="PLINKMerge_1.mapfile" name="map file" required="true" enabled="true" order="2" includeTransformedParameter="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Subtract">.tfam</transform>
+                                </format>
+                        </input>
+                        <input id="PLINKMerge_1.ADNIbfile" name="ADNI bfile" required="true" enabled="true" order="0" prefix="--bfile" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="PLINKMerge_1.MergeMode" name="Merge Mode" required="true" enabled="true" order="3" prefix="--merge-mode" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <output id="PLINKMerge_1.FlowControl" name="Flow Control" required="true" enabled="true" order="9">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="PLINKMerge_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="8">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <input id="PLINKMerge_1.Pheno" name="Pheno" required="true" enabled="true" order="6" prefix="--pheno" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="PLINKMerge_1.Checksex" name="Check sex" required="true" enabled="true" order="7" prefix="--check-sex" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <license>GNU General Public License</license>
+                </module>
+                <dataModule id="SubjectstoExclude_1" name="Subjects to Exclude" posX="1229" posY="461" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Sep 22 18:43:10 MST 2016" />
+                        </metadata>
+                        <output id="SubjectstoExclude_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>/path/to/exclusion_list.txt</value>
+                        </values>
+                </dataModule>
+                <transformerModule id="CovariateTransformer_1" name="Covariate Transformer" posX="431" posY="777" sourceCode="">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 16:03:42 MST 2016" />
+                        </metadata>
+                        <output id="CovariateTransformer_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <input id="CovariateTransformer_1.Directory" name="Directory" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <transformations>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Directory" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value="/covariate_file/covar.txt" />
+                                </transformation>
+                        </transformations>
+                </transformerModule>
+                <module id="AddAnnotationsLinear_1" name="Add Annotations Linear" posX="949" posY="1561" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/annotate_linear_qassoc.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 11:40:08 MST 2016" />
+                        </metadata>
+                        <input id="AddAnnotationsLinear_1.PLINKResults" name="PLINK Results" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="AddAnnotationsLinear_1.SNPAnnotation" name="SNP Annotation" required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="AddAnnotationsLinear_1.Measures" name="Measures" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="AddAnnotationsLinear_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <output id="AddAnnotationsLinear_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="4">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                </module>
+                <transformerModule id="Transformerassoc_1" name="Transformer assoc" posX="774" posY="657" sourceCode="">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 30 12:57:38 MST 2016" />
+                        </metadata>
+                        <output id="Transformerassoc_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <input id="Transformerassoc_1.Measure" name="Measure" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="Transformerassoc_1.Directory" name="Directory" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <transformations>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Directory" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value="/PLINK_results_linear/" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Measure" />
+                                </transformation>
+                        </transformations>
+                </transformerModule>
+                <dataModule id="Mapfile_1" name="Map file" package="LONI" version="1.0" description="Basename of the .tped and .tfam files.&#xA;&#xA;E.g., &#xA;/usr/local/loniWorkflows/Bioinformatics/data/early1.*" posX="26" posY="1134" rotation="1" sourceCode="" type="File" source="true" loopIndex="false" serverAddress="cranium.loni.usc.edu">
+                        <tag />
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 17 14:36:19 PDT 2010" />
+                        </metadata>
+                        <output id="Mapfile_1.Output" name="Output" description="Basename of the .tped and .tfam files.&#xA;&#xA;E.g., &#xA;/usr/local/loniWorkflows/Bioinformatics/data/early1.*" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//path/to/external_genetics_data.map</value>
+                        </values>
+                </dataModule>
+                <transformerModule id="AltPheTransformer_1" name="Alt Phe Transformer" posX="277" posY="826" sourceCode="">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 10:11:50 MST 2016" />
+                        </metadata>
+                        <output id="AltPheTransformer_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <input id="AltPheTransformer_1.Directory" name="Directory" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <transformations>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Directory" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value="/casecontrol/casecontrol.txt" />
+                                </transformation>
+                        </transformations>
+                </transformerModule>
+                <dataModule id="Measures_1" name="Measures" posX="1107" posY="11" sourceCode="" type="File" source="true" loopIndex="false" serverAddress="cranium.loni.usc.edu">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Sep 22 17:26:03 MST 2016" />
+                        </metadata>
+                        <output id="Measures_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Text file" extension="txt" description="Text file" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//path/to/Measures.txt</value>
+                        </values>
+                </dataModule>
+                <module id="FileStructureSetup_1" name="File Structure Setup" posX="241" posY="153" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/setup_file_structure.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 12 14:55:15 MST 2016" />
+                        </metadata>
+                        <input id="FileStructureSetup_1.DirectoryName" name="Directory Name" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="FileStructureSetup_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="FileStructureSetup_1.ResultsFolderName" name="Results Folder Name" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="FileStructureSetup_1.Output" name="Output" required="true" enabled="true" order="3">
+                                <format type="String" cardinality="1" />
+                                <stringExtract source="stdout" rule="locationBased" delimiter=" " row="11" col="-1" />
+                        </output>
+                </module>
+                <dataModule id="ServerSaveDirectory_1" name="Server Save Directory" posX="27" posY="1493" rotation="1" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 17:33:29 MST 2016" />
+                        </metadata>
+                        <output id="ServerSaveDirectory_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>/path/to/server_save_directory/</value>
+                        </values>
+                </dataModule>
+                <dataModule id="MergeMode_1" name="Merge Mode" posX="25" posY="1271" rotation="1" sourceCode="" type="Number" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Aug 24 15:24:38 MST 2016" />
+                        </metadata>
+                        <output id="MergeMode_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>2</value>
+                        </values>
+                </dataModule>
+                <dataModule id="Pfilter_1" name="Pfilter" posX="1014" posY="608" sourceCode="" type="Number" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 07 14:33:15 MST 2016" />
+                        </metadata>
+                        <output id="Pfilter_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>.001</value>
+                        </values>
+                </dataModule>
+                <module id="AddFIDto.phe_1" name="Add FID to .phe" posX="529" posY="694" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/add_fid_to_phe.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Aug 29 12:12:16 MST 2016" />
+                        </metadata>
+                        <input id="AddFIDto.phe_1.Merged" name="Merged" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="AddFIDto.phe_1.Output" name="Output" required="true" enabled="true" order="2">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="AddFIDto.phe_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <output id="AddFIDto.phe_1.FlowControlOutput" name="Flow Control Output" required="true" enabled="true" order="4">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="AddFIDto.phe_1.Measures" name="Measures" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                </module>
+                <module id="FileIO2_1" name="File IO 2" posX="545" posY="122" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/cp">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 11:41:32 PDT 2016" />
+                        </metadata>
+                        <input id="FileIO2_1.AnnotationFile" name="Annotation File" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="FileIO2_1.AnnotationFileout" name="Annotation File out" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                </module>
+                <dataModule id="MissingRateperPerson_1" name="Missing Rate per Person" posX="1259" posY="670" sourceCode="" type="Number" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 23 17:50:10 MST 2016" />
+                        </metadata>
+                        <output id="MissingRateperPerson_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>0.1</value>
+                        </values>
+                </dataModule>
+                <module id="CreateCovariateFile_1" name="Create Covariate File" posX="22" posY="317" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifshome/wmatloff/assoc_tools/create_covariate_file.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 05 18:39:02 MST 2016" />
+                        </metadata>
+                        <input id="CreateCovariateFile_1.ADNIData" name="ADNI Data" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="CreateCovariateFile_1.Covariates" name="Covariates" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="CreateCovariateFile_1.Output" name="Output" required="true" enabled="true" order="2">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="CreateCovariateFile_1.FlowControl" name="Flow Control" required="true" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="CreateCovariateFile_1.FlowControlInput" name="Flow Control Input" required="true" enabled="true" order="4">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                </module>
+                <module id="File-List_2" name="File -&gt; List" posX="1292" posY="113" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/cp">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 11:41:32 PDT 2016" />
+                        </metadata>
+                        <input id="File-List_2.ToNormalize" name="To Normalize" required="false" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="File-List_2.out" name="out" required="false" enabled="true" isListFile="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                </module>
+                <module id="FileIO1_1" name="File IO 1" posX="233" posY="1356" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/cp">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 11:41:32 PDT 2016" />
+                        </metadata>
+                        <input id="FileIO1_1.AnnotationFile" name="Annotation File" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="FileIO1_1.AnnotationFileout" name="Annotation File out" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                </module>
+                <dataModule id="ExternalICV_1" name="External ICV?" posX="819" posY="15" sourceCode="" type="Number" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 12:36:06 MST 2016" />
+                        </metadata>
+                        <output id="ExternalICV_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>1</value>
+                        </values>
+                </dataModule>
+                <dataModule id="MergedData_1" name="Merged Data" posX="475" posY="16" sourceCode="" type="File" source="true" loopIndex="false" serverAddress="cranium.loni.usc.edu">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Sep 22 18:38:55 MST 2016" />
+                        </metadata>
+                        <output id="MergedData_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//path/to/merged_data.csv</value>
+                        </values>
+                </dataModule>
+                <dataModule id="MissingRateperSNP_1" name="Missing Rate per SNP" posX="1293" posY="716" sourceCode="" type="Number" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 23 17:35:27 MST 2016" />
+                        </metadata>
+                        <output id="MissingRateperSNP_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>0.1</value>
+                        </values>
+                </dataModule>
+                <dataModule id="AnnotationFile_1" name="Annotation File" posX="27" posY="1371" rotation="1" sourceCode="" type="File" source="true" loopIndex="false" serverAddress="cranium.loni.usc.edu">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 16:25:35 MST 2016" />
+                        </metadata>
+                        <output id="AnnotationFile_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//path/to/SNP_annotation.txt</value>
+                        </values>
+                </dataModule>
+                <transformerModule id="Transf.Logistic_1" name="Transf. Logistic" posX="635" posY="1273" sourceCode="">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 16:00:24 MST 2016" />
+                        </metadata>
+                        <output id="Transf.Logistic_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <input id="Transf.Logistic_1.Directory" name="Directory" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <transformations>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Directory" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value="/PLINK_results_logistic/PLINK_results_logistic" />
+                                </transformation>
+                        </transformations>
+                </transformerModule>
+                <dataModule id="ToNormalize_1" name="To Normalize" posX="1308" posY="13" sourceCode="" type="File" source="true" loopIndex="false" serverAddress="cranium.loni.usc.edu">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Sep 22 18:42:11 MST 2016" />
+                        </metadata>
+                        <output id="ToNormalize_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Text file" extension="txt" description="Text file" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//path/to/to_normalize.txt</value>
+                        </values>
+                </dataModule>
+                <module id="PLINKAssoc_1" name="PLINK Assoc" package="PLINK" version="1.07" icon="0" posX="822" posY="1324" sourceCode="" location="pipeline://cranium.loni.usc.edu//usr/local/loniWorkflows/Bioinformatics/plink/plink" gridVariables="h_vmem=6;h_stack=256">
+                        <citations>
+                                <citation>PMID: 17701901</citation>
+                        </citations>
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 17 13:56:17 PDT 2010" />
+                        </metadata>
+                        <input id="PLINKAssoc_1.bfile" name="bfile" required="true" enabled="true" order="1" prefix="--bfile" prefixSpaced="true" prefixAllArgs="false" includeTransformedParameter="true">
+                                <format type="String" cardinality="1">
+                                        <transform order="0" operation="Replace">PLINKAssoc_1.bfile-1:PLINKMerge_1.Output-1</transform>
+                                </format>
+                        </input>
+                        <input id="PLINKAssoc_1.Association" name="Association" required="true" enabled="true" order="2" prefix="--assoc" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="PLINKAssoc_1.MinorAlleleFrequency" name="Minor Allele Frequency" required="true" enabled="true" order="10" prefix="--maf" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKAssoc_1.MissingRateperSNP" name="Missing Rate per SNP" required="true" enabled="true" order="9" prefix="--geno" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKAssoc_1.H-WEqTest" name="H-W Eq Test" required="true" enabled="true" order="11" prefix="--hwe" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKAssoc_1.MissingRateperPerson" name="Missing Rate per Person" required="true" enabled="true" order="8" prefix="--mind" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKAssoc_1.Noweb" name="No web" required="false" enabled="true" order="12">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="PLINKAssoc_1.FlowControl" name="Flow Control" required="true" enabled="true" order="0">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <input id="PLINKAssoc_1.Output" name="Output" required="true" enabled="true" order="5" prefix="--out" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="PLINKAssoc_1.FlowControlOutput" name="Flow Control Output" required="false" enabled="true" order="13">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="PLINKAssoc_1.Pfilter" name="Pfilter" required="false" enabled="true" order="7" prefix="--pfilter" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="PLINKAssoc_1.Exclusion" name="Exclusion" required="true" enabled="true" order="4" prefix="--remove" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="PLINKAssoc_1.QTMeans" name="QT Means" required="true" enabled="true" order="3" prefix="--qt-means" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="PLINKAssoc_1.Phenotype" name="Phenotype" required="true" enabled="true" order="6" prefix="--pheno" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <license>GNU General Public License</license>
+                </module>
+                <transformerModule id="Transformerassocmeans_1" name="Transformer assoc means" posX="1122" posY="1172" sourceCode="">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 30 12:57:38 MST 2016" />
+                        </metadata>
+                        <output id="Transformerassocmeans_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <input id="Transformerassocmeans_1.Measure" name="Measure" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="Transformerassocmeans_1.Directory" name="Directory" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <transformations>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Directory" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value="/PLINK_results_assoc_means/" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Measure" />
+                                </transformation>
+                        </transformations>
+                </transformerModule>
+                <transformerModule id="Trasformer.phemeans_1" name="Trasformer .phe means" posX="1163" posY="1216" sourceCode="">
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 30 12:57:38 MST 2016" />
+                        </metadata>
+                        <output id="Trasformer.phemeans_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <input id="Trasformer.phemeans_1.Measure" name="Measure" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="Trasformer.phemeans_1.Directory" name="Directory" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <transformations>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Directory" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value="/phe_files_with_FID/" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Measure" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value=".phe" />
+                                </transformation>
+                        </transformations>
+                </transformerModule>
+                <module id="List-MultiwordString_1" name="List -&gt; Multiword String" posX="916" posY="275" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/echo">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 02 11:41:32 PDT 2016" />
+                        </metadata>
+                        <input id="List-MultiwordString_1.in" name="in" required="false" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="List-MultiwordString_1.out" name="out" required="false" enabled="true" isListFile="true" order="1">
+                                <format type="String" cardinality="1" />
+                                <stringExtract source="stdout" rule="locationBased" delimiter=";" row="11" col="-1" />
+                        </output>
+                </module>
+                <transformerModule id="Transf.PLINKMerge_1" name="Transf. PLINK Merge" posX="216" posY="878" sourceCode="">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Sep 23 16:00:24 MST 2016" />
+                        </metadata>
+                        <output id="Transf.PLINKMerge_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <input id="Transf.PLINKMerge_1.Directory" name="Directory" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <transformations>
+                                <transformation type="Append">
+                                        <argument type="Parameter value" value="Directory" />
+                                </transformation>
+                                <transformation type="Append">
+                                        <argument type="Custom value" value="/merged_plink_data/merged_plink_data" />
+                                </transformation>
+                        </transformations>
+                </transformerModule>
+        </moduleGroup>
+</pipeline>
+

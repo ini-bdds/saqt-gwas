@@ -1,0 +1,35 @@
+source(“/Users/willmatloff/Documents/LONI/Manuscripts/1_SAQT_GWAS_Methods_Paper/SAQT_GWAS_Code/saqt_gwas_v1.R”)
+source(“/Users/willmatloff/Documents/LONI/Manuscripts/1_SAQT_GWAS_Methods_Paper/SAQT_GWAS_Code/saqt_gwas_v1.R”, print.eval = TRUE)
+source("/Users/willmatloff/Documents/LONI/Manuscripts/1_SAQT_GWAS_Methods_Paper/SAQT_GWAS_Code/saqt_gwas_v1.R")
+Results <- "/Users/willmatloff/Documents/LONI/ADNI_Results/Latest/Results_for_Methods_Paper/results_fs_adjusted_16_12_08"
+initialize()
+library(devtools)
+initialize()
+source("/Users/willmatloff/Documents/LONI/Manuscripts/1_SAQT_GWAS_Methods_Paper/SAQT_GWAS_Code/saqt_gwas_v1.R", print.eval = TRUE)
+Results <- "/Users/willmatloff/Documents/LONI/ADNI_Results/Latest/Results_for_Methods_Paper/results_fs_adjusted_16_12_08"
+initialize()
+view_phtenotypes(Results)
+view_phenotypes(Results)
+linear_assoc_manhattan_plot(Results, "AMYGDL")
+linear_assoc_manhattan_plot(Results, "Left-Amygdala")
+source("/Users/willmatloff/Documents/LONI/Manuscripts/1_SAQT_GWAS_Methods_Paper/SAQT_GWAS_Code/saqt_gwas_v1.R", print.eval = TRUE)
+linear_assoc_manhattan_plot(Results, "Left-Amygdala")
+source("/Users/willmatloff/Documents/LONI/Manuscripts/1_SAQT_GWAS_Methods_Paper/SAQT_GWAS_Code/saqt_gwas_v1.R", print.eval = TRUE)
+linear_assoc_manhattan_plot(Results, "Left-Amygdala")
+source("/Users/willmatloff/Documents/LONI/Manuscripts/1_SAQT_GWAS_Methods_Paper/SAQT_GWAS_Code/saqt_gwas_v1.R", print.eval = TRUE)
+results_name <- "/Users/willmatloff/Documents/LONI/ADNI_Results/Latest/Results_for_Methods_Paper/results_fs_adjusted_16_12_08"
+initialize()
+view_phenotypes
+view_phenotypes(results_name)
+linear_assoc_manhattan_plot(results_name, "Left-Amygdala")
+combined_linear_assoc_manhattan_plot(results_name)
+view_combined_top_snps_linear(results_name,20)
+view_top_snps_linear(results_name,"Right-Amygdala", 20)
+logistic_assoc_manhattan_plot(results_name)
+view_top_snps_logistic(results_name,20)
+phe_by_groups(results_name, "Right-Amygdala")
+["P_Shen"]
+vignette("nse")
+help(arrange_)
+??arnage_
+??arrange_
